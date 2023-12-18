@@ -1,0 +1,6 @@
+streamlit-authenticator==0.2.3
+snowflake-connector-python
+pandas
+streamlit
+snowflake-snowpark-python
+boto3
