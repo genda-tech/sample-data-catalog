@@ -1,16 +1,16 @@
-# data-catalog
+# sample-data-catalog
 
 # 事前に必要な準備
 ローカル or AWS上のどちらでも動かせるように作成してあります。
 ## ローカルの場合
 `config.yaml`と`secrets.toml`を作成して、以下のようなディレクトリ構成にします。
 ```
-streamlit-data-catalog/
-  ├ .streamlit/config.toml/ streamlitの背景の色などを設定
-  ├ data-catalog.py/ データカタログのコード 
-  ├ requirements.txt/ 必要なライブラリをインストールするのに使うrequirement.txt
- 　　├ secrets.toml/ snowflakeの接続情報を記載する。
-  └ config.yaml/ ログイン機能用の設定を記載する。
+sample-data-catalog/
+  ├ .streamlit/config.toml streamlitの背景の色などを設定
+  ├ data-catalog.py データカタログのコード 
+  ├ requirements.txt 必要なライブラリをインストールするのに使うrequirement.txt
+ 　　├ secrets.toml snowflakeの接続情報を記載する。
+  └ config.yaml ログイン機能用の設定を記載する。
 ```
 ### config.yamlに記載すること
 ```yaml
