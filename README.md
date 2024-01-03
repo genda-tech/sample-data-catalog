@@ -74,13 +74,15 @@ AWS Secrets Managerにて、シークレットを登録しておく必要があ�
 
 * Username
 * Password
-![image](https://github.com/gussan-me/streamlit-data-catalog/assets/75415556/1259c13d-8dfa-4438-91ac-375da6b9c251)
+![image](https://github.com/genda-tech/sample-data-catalog/assets/974175/e8d633ac-23b8-4a43-acfa-26b771fa4ef8)
+
 
 ## データカタログ画面
 サイドバーの以下の機能を使ってデータを検索します。
 * テキストボックス
 * ドロップボックス
-![image](https://github.com/gussan-me/streamlit-data-catalog/assets/75415556/ca5e6e91-2254-47b5-aa20-e73c929b3377)
+![image](https://github.com/genda-tech/sample-data-catalog/assets/974175/8e1bc67a-5a40-4942-9e8c-8ca633e15af6)
+
 
 
 
