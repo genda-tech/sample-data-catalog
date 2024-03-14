@@ -1,0 +1,24 @@
+name: "EMPLOYEES"
+comment: "従業員マスター"
+change_tracking: false
+columns:
+  - name: "EMPLOYEE_ID"
+    type: "NUMBER(38,0)"
+    comment: "従業員ID"
+    nullable: false
+  - name: "FIRST_NAME"
+    type: "VARCHAR(50)"
+    comment: "名"
+    nullable: true
+  - name: "LAST_NAME"
+    type: "VARCHAR(50)"
+    comment: "姓"
+    nullable: true
+  - name: "SALARY"
+    type: "NUMBER(10,2)"
+    comment: "給与"
+    nullable: true
+  - name: "HIRE_DATE"
+    type: "DATE"
+    comment: "入社日"
+    nullable: true

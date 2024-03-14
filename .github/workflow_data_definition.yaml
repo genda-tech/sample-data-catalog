@@ -1,0 +1,51 @@
+name: workflow for Terraform Data Definition
+
+# mainブランチにPRがマージされた時 or mainブランチに直接pushされた時に実行
+# yamlファイルを変更したときに実行される。
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'terraform/modules/snowflake/snowflake_resource/DATA_CATALOG_LT/tables/*.yaml'
+
+permissions:
+  id-token: write
+  contents: read
+
+env:
+  TF_VERSION: 1.5.6
+  AWS_REGION: ap-northeast-1
+  # Snowflakeの認証情報
+  SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }} # GitHubのSecretsに登録したSnowflakeのアカウント名
+  SNOWFLAKE_REGION: "ap-northeast-1.aws"
+  SNOWFLAKE_USER: "[SnowflakeのUSER名]"
+  SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }} # GitHubのSecretsに登録したSnowflakeのパスワード
+jobs:
+  main:
+    name: main
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        workdir: [terraform/tfroot/production]
+    # backendをS3に設定している場合は、AWSの認証情報が必要
+    steps:
+      - uses: actions/checkout@v3
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1-node16
+        with:
+          role-to-assume: ${{ secrets.AWS_IAM_ROLE_ARN }} # GitHubのSecretsに登録したIAMロールARN
+          aws-region: ${{ env.AWS_REGION }}
+      - name: terraform setup
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: ${{ env.TF_VERSION }}
+      - name: init
+        working-directory: ${{ matrix.workdir }}
+        run: terraform init
+      - name: Terraform plan -target="module.snowflake_resource_lt"
+        working-directory: ${{ matrix.workdir }}
+        run: terraform plan -no-color -target="module.snowflake_resource_lt
+      - name: Terraform apply -target="module.snowflake_resource_lt"
+        working-directory: ${{ matrix.workdir }}
+        run: terraform apply -auto-approve -no-color
