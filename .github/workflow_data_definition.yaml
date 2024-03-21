@@ -18,8 +18,8 @@ env:
   AWS_REGION: ${{ secrets.AWS_REGION }} # GitHubのSecretsに登録したAWSのリージョン名
   # Snowflakeの認証情報
   SNOWFLAKE_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}   # GitHubのSecretsに登録したSnowflakeのアカウント名
-  SNOWFLAKE_REGION: "${{ secrets.SNOWFLAKE_REGION }}"   # GitHubのSecretsに登録したSnowflakeのリージョン名
-  SNOWFLAKE_USER: "${{ secrets.SNOWFLAKE_USER }}"       # GitHubのSecretsに登録したSnowflakeのユーザー名
+  SNOWFLAKE_REGION: ${{ secrets.SNOWFLAKE_REGION }}   # GitHubのSecretsに登録したSnowflakeのリージョン名
+  SNOWFLAKE_USER: ${{ secrets.SNOWFLAKE_USER }}       # GitHubのSecretsに登録したSnowflakeのユーザー名
   SNOWFLAKE_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }} # GitHubのSecretsに登録したSnowflakeのパスワード
 jobs:
   main:
