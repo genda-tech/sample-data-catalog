@@ -1,8 +1,18 @@
 # データ定義フロー
   # 事前に必要な準備
-tfstateを配置するためのバケットが必要です。
-本サンプルコードはAmazon S3にtfstateを配置することを想定しています。
-なお、`terraform/tfroot/backend.tf`にて、tfstateの配置場所を指定します。
+  ## S3バケットを用意する
+  tfstateを配置するためのバケットが必要です。
+  本サンプルコードはAmazon S3にtfstateを配置することを想定しています。
+  なお、`terraform/tfroot/backend.tf`にて、tfstateの配置場所を指定します。
+  ## GitHubのSecretsに設定する項目
+  以下の項目をGitHubのSecretsに設定してください。
+  GitHub Actionsが使用するAWSやSnowflakeの認証情報を設定します。
+  * AWS_REGION
+  * AWS_IAM_ROLE_ARN
+  * SNOWFLAKE_ACCOUNT
+  * SNOWFLAKE_REGION
+  * SNOWFLAKE_USER
+  * SNOWFLAKE_PASSWORD
 
   # 機能
 メタデータを管理している該当のyamlを編集します。そして、GitHubのmainブランチへのマージをトリガーとしてGitHub Actionsが実行され、自動的にメタデータが更新されます。
@@ -33,11 +43,3 @@ columns:
     comment: "入社日"
     nullable: true
 ```
-  # GitHubのSecretsに設定する項目
-  以下の項目をGitHubのSecretsに設定してください。
-  * AWS_REGION
-  * AWS_IAM_ROLE_ARN
-  * SNOWFLAKE_ACCOUNT
-  * SNOWFLAKE_REGION
-  * SNOWFLAKE_USER
-  * SNOWFLAKE_PASSWORD

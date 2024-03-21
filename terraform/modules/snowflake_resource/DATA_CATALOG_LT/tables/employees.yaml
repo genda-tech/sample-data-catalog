@@ -8,11 +8,11 @@ columns:
     nullable: false
   - name: "FIRST_NAME"
     type: "VARCHAR(50)"
-    comment: "名"
+    comment: "名前"
     nullable: true
   - name: "LAST_NAME"
     type: "VARCHAR(50)"
-    comment: "姓"
+    comment: "苗字。"
     nullable: true
   - name: "SALARY"
     type: "NUMBER(10,2)"
