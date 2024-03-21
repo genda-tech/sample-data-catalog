@@ -4,7 +4,7 @@ change_tracking: false
 columns:
   - name: "EMPLOYEE_ID"
     type: "NUMBER(38,0)"
-    comment: "従業員ID"
+    comment: "従業員ID。このテーブルの主キー。"
     nullable: false
   - name: "FIRST_NAME"
     type: "VARCHAR(50)"
@@ -16,9 +16,9 @@ columns:
     nullable: true
   - name: "SALARY"
     type: "NUMBER(10,2)"
-    comment: "給与"
+    comment: "給与。ドル単位で格納。"
     nullable: true
   - name: "HIRE_DATE"
     type: "DATE"
-    comment: "入社日"
+    comment: "雇用した日。日本時間にて格納。"
     nullable: true
