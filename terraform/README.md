@@ -32,10 +32,10 @@ columns:
     type: "DATE"
     comment: "入社日"
     nullable: true
-
 ```
   # GitHubのSecretsに設定する項目
-  * AWS_REGIO
+  以下の項目をGitHubのSecretsに設定してください。
+  * AWS_REGION
   * AWS_IAM_ROLE_ARN
   * SNOWFLAKE_ACCOUNT
   * SNOWFLAKE_REGION
