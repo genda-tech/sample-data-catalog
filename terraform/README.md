@@ -1,12 +1,12 @@
 # データ定義フロー
-# 事前に必要な準備
-tfstateを置いておくバケットを用意しておく必要があります。
-今回はAWSのS3にtfstateを置く想定としてコードを作成してあります。
-`terraform/tfroot/backend.tf`にて、tfstateを置く場所を指定してあります。
+  # 事前に必要な準備
+tfstateを配置するためのバケットが必要です。
+本サンプルコードはAmazon S3にtfstateを配置することを想定しています。
+なお、`terraform/tfroot/backend.tf`にて、tfstateの配置場所を指定します。
 
-# 機能
-メタデータを管理しているyamlを編集して、GitHubのmainにマージするとGitHub Actionsがトリガーされて自動的にメタデータが更新されます。
-## メタデータ
+  # 機能
+メタデータを管理している該当のyamlを編集します。そして、GitHubのmainブランチへのマージをトリガーとしてGitHub Actionsが実行され、自動的にメタデータが更新されます。
+  ## メタデータ
 ```employees.yaml
 name: "EMPLOYEES"
 comment: "従業員マスター"
