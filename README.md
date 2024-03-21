@@ -99,7 +99,7 @@
   ### メタデータ自動更新機能
   データカタログに表示するメタデータの管理を自動化する機能です。
   メタデータを管理している該当のyamlを編集します。そして、GitHubのmainブランチへのマージをトリガーとしてGitHub Actionsが実行され、自動的にメタデータが更新されます。
-  
+
   メタデータは以下のようなフォーマットで作成してください。
   ```employees.yaml
   name: "EMPLOYEES"
@@ -108,23 +108,23 @@
   columns:
     - name: "EMPLOYEE_ID"
       type: "NUMBER(38,0)"
-      comment: "従業員ID"
+      comment: "従業員のID。このテーブルの主キー。"
       nullable: false
     - name: "FIRST_NAME"
       type: "VARCHAR(50)"
-      comment: "名"
+      comment: "名前。"
       nullable: true
     - name: "LAST_NAME"
       type: "VARCHAR(50)"
-      comment: "姓"
+      comment: "苗字。"
       nullable: true
     - name: "SALARY"
       type: "NUMBER(10,2)"
-      comment: "給与"
+      comment: "給与。ドル単位で格納。"
       nullable: true
     - name: "HIRE_DATE"
       type: "DATE"
-      comment: "入社日"
+      comment: "雇用した日。日本時間にて格納。"
       nullable: true
   ```
 
