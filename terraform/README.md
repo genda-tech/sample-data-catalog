@@ -34,3 +34,10 @@ columns:
     nullable: true
 
 ```
+  # GitHubのSecretsに設定する項目
+  * AWS_REGIO
+  * AWS_IAM_ROLE_ARN
+  * SNOWFLAKE_ACCOUNT
+  * SNOWFLAKE_REGION
+  * SNOWFLAKE_USER
+  * SNOWFLAKE_PASSWORD
