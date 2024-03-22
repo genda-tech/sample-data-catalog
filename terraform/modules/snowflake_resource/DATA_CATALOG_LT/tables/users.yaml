@@ -16,5 +16,5 @@ columns:
     nullable: true
   - name: "CREATED_AT"
     type: "TIMESTAMP_NTZ(9)"
-    comment: "作成日。"
+    comment: "作成日時。"
     nullable: true
