@@ -8,7 +8,7 @@ columns:
     nullable: false
   - name: "FIRST_NAME"
     type: "VARCHAR(50)"
-    comment: "名前"
+    comment: "名前。"
     nullable: true
   - name: "LAST_NAME"
     type: "VARCHAR(50)"
