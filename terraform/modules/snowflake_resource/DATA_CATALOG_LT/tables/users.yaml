@@ -4,17 +4,17 @@ change_tracking: false
 columns:
   - name: "ID"
     type: "NUMBER(38,0)"
-    comment: "ユーザーID"
+    comment: "ユーザーID。"
     nullable: false
   - name: "NAME"
     type: "VARCHAR(100)"
-    comment: "名前"
+    comment: "名前。"
     nullable: true
   - name: "PREFERENCES"
     type: "VARIANT"
-    comment: "設定"
+    comment: "設定。"
     nullable: true
   - name: "CREATED_AT"
     type: "TIMESTAMP_NTZ(9)"
-    comment: "作成日"
+    comment: "作成日。"
     nullable: true
